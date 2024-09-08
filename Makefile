@@ -11,11 +11,12 @@ SRC_FILES = $(SRC_DIR)/push_swap.c \
             $(SRC_DIR)/stack_operations/reverse_rotate.c \
             $(SRC_DIR)/stack_operations/rotate.c \
             $(SRC_DIR)/stack_operations/swap.c \
-            $(SRC_DIR)/utilities/utilis.c \
+            $(SRC_DIR)/utilities/utils.c \
             $(SRC_DIR)/error_handling/input_validation.c \
             $(SRC_DIR)/error_handling/error_checking.c \
             $(SRC_DIR)/sorting_algorithms/sort_small.c \
             $(SRC_DIR)/sorting_algorithms/sort_utils.c \
+             $(SRC_DIR)/sorting_algorithms/function_sorted.c \
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 LIBFT = $(LIBFT_DIR)/libft.a

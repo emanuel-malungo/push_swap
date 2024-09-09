@@ -12,7 +12,7 @@
 
 #include "../../include/push_swap.h"
 
-void	sort_small(t_stack **stack_a, t_stack **stack_b)
+void	sort_small(t_stack **stack_a)
 {
 	int	size;
 
@@ -21,10 +21,13 @@ void	sort_small(t_stack **stack_a, t_stack **stack_b)
 		sort_two_elements(stack_a);
 	else if (size == 3)
 		sort_three_elemets(stack_a);
-	else if (size == 4)
-		sort_four_elements(stack_a, stack_b);
-	else if (size == 5)
-		sort_five_elements(stack_a, stack_b);
+}
+
+void	ft_sorted_big(t_stack **stack_a, t_stack **stack_b) 
+{
+	move_all_but_three(stack_a, stack_b);
+	sort_three_elemets(stack_a);
+	insert_elements_back(stack_a, stack_b);
 }
 
 void	ft_sorted(t_stack **stack_a, t_stack **stack_b)
@@ -32,12 +35,10 @@ void	ft_sorted(t_stack **stack_a, t_stack **stack_b)
 	int	size;
 
 	size = get_stack_size(*stack_a);
-	if (size > 1 && size < 6)
-		sort_small(stack_a, stack_b);
-	/*
-	if (size > 5)
+	if (size <= 3)
+		sort_small(stack_a);
+	if (size > 3)
 	{
-		selection_sort(stack_a, stack_b);
+		ft_sorted_big(stack_a, stack_b);
 	}
-	*/
 }

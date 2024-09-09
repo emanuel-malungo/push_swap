@@ -77,6 +77,15 @@ int		stack_is_sorted(t_stack *stack);
 int		get_position(t_stack *stack, int number);
 
 // sorting_algorithms/function_sorted.c
+void	sort_small(t_stack **stack_a);
 void	ft_sorted(t_stack **stack_a, t_stack **stack_b);
-void	sort_small(t_stack **stack_a, t_stack **stack_b);
+void    ft_sorted_big(t_stack **stack_a, t_stack **stack_b);
+
+// // sorting_algorithms/sort_big.c
+int 	calculate_ra_cost(int position);
+int 	calculate_rra_cost(int total_size, int position);
+int 	find_insertion_position(t_stack *stack, int number);
+void	move_all_but_three(t_stack **stack_a, t_stack **stack_b);
+void	insert_elements_back(t_stack **stack_a, t_stack **stack_b);
+
 #endif

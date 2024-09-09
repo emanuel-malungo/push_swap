@@ -16,7 +16,8 @@ SRC_FILES = $(SRC_DIR)/push_swap.c \
             $(SRC_DIR)/error_handling/error_checking.c \
             $(SRC_DIR)/sorting_algorithms/sort_small.c \
             $(SRC_DIR)/sorting_algorithms/sort_utils.c \
-             $(SRC_DIR)/sorting_algorithms/function_sorted.c \
+            $(SRC_DIR)/sorting_algorithms/function_sorted.c \
+            $(SRC_DIR)/sorting_algorithms/sort_big.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 LIBFT = $(LIBFT_DIR)/libft.a

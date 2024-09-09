@@ -50,6 +50,7 @@ int	main(int argc, char **argv)
 	if (!stack_is_sorted(stack_a))
 	{
 		ft_sorted(&stack_a, &stack_b);
+		print_stack(stack_a);
 	}
 	ft_free_stack(&stack_a);
 	return (0);

@@ -1,47 +1,53 @@
-CC = cc
-SRC_DIR = src
+# Nome do executável
 NAME = push_swap
-LIBFT_DIR = libft
-INCLUDE_DIR = include
-CFLAGS = -Wall -Wextra -Werror
 
-SRC_FILES = $(SRC_DIR)/push_swap.c \
-            $(SRC_DIR)/stack_operations/stack_utils.c \
-            $(SRC_DIR)/stack_operations/push.c \
-            $(SRC_DIR)/stack_operations/reverse_rotate.c \
-            $(SRC_DIR)/stack_operations/rotate.c \
-            $(SRC_DIR)/stack_operations/swap.c \
-            $(SRC_DIR)/utilities/utils.c \
-            $(SRC_DIR)/error_handling/input_validation.c \
-            $(SRC_DIR)/error_handling/error_checking.c \
-            $(SRC_DIR)/sorting_algorithms/sort_small.c \
-            $(SRC_DIR)/sorting_algorithms/sort_utils.c \
-            $(SRC_DIR)/sorting_algorithms/function_sorted.c \
-            $(SRC_DIR)/sorting_algorithms/sort_big.c
+# Compilador e flags
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -I$(LIBFTDIR)
 
-OBJ_FILES = $(SRC_FILES:.c=.o)
-LIBFT = $(LIBFT_DIR)/libft.a
+# Diretórios
+SRCDIR = .
+LIBFTDIR = libft
 
-INCLUDE = -I $(INCLUDE_DIR) -I $(LIBFT_DIR)
+# Arquivos fonte e objetos
+SRCS = $(SRCDIR)/push_swap.c \
+       $(SRCDIR)/utils.c \
+       $(SRCDIR)/error_checking.c \
+       $(SRCDIR)/input_validation.c \
+       $(SRCDIR)/push.c \
+       $(SRCDIR)/reverse_rotate.c \
+       $(SRCDIR)/radix_sort.c \
+       $(SRCDIR)/radix_utils.c \
+       $(SRCDIR)/sort_utils.c \
+       $(SRCDIR)/swap.c \
+       $(SRCDIR)/function_sorted.c \
+       $(SRCDIR)/sort_small.c \
+       $(SRCDIR)/stack_utils.c \
+       $(SRCDIR)/rotate.c \
 
+OBJS = $(SRCS:.c=.o)
+
+# Regras
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES) $(LIBFT)
-	@$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT) -o $@
+$(NAME): $(OBJS)
+	@$(MAKE) -C $(LIBFTDIR)
+	@$(CC) $(CFLAGS) -o $@ $(OBJS) -L$(LIBFTDIR) -lft
+	@echo "Compilação concluída!"
 
-$(LIBFT):
-	@$(MAKE) -C $(LIBFT_DIR)
-
-$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
-	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+$(SRCDIR)/%.o: $(SRCDIR)/%.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "Compilado $<"
 
 clean:
-	@rm -f $(OBJ_FILES)
-	@$(MAKE) clean -C $(LIBFT_DIR)
+	@rm -f $(OBJS)
+	@$(MAKE) clean -C $(LIBFTDIR)
+	@echo "Arquivos objeto removidos!"
 
 fclean: clean
 	@rm -f $(NAME)
-	@$(MAKE) fclean -C $(LIBFT_DIR)
+	@$(MAKE) fclean -C $(LIBFTDIR)
+	@echo "Executável removido!"
 
 re: fclean all
 

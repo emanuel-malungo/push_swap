@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emalungo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:11:43 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/08 07:12:11 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:59:37 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "./push_swap.h"
 
 void	sort_two_elements(t_stack **stack_a)
 {

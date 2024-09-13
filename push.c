@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emalungo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:13:40 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/08 07:13:42 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:58:16 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "./push_swap.h"
 
 void	ft_pa(t_stack **stack_a, t_stack **stack_b, int j)
 {

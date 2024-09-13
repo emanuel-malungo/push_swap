@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emalungo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:07:51 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/08 07:17:27 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:19:54 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <limits.h>
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 
 typedef struct t_stack{
 	int				number;
@@ -38,6 +38,8 @@ int		validate_arguments(int argc, char **argv);
 // utilities/utils.c
 void	ft_free_split(char **split);
 void	ft_free_stack(t_stack **stack);
+void	print_stack(t_stack *stack);
+void	free_sorted_list(t_stack **sorted_list);
 
 // stack_operations/stack_utils.c
 t_stack	*ft_stack_new(int number);
@@ -77,15 +79,19 @@ int		stack_is_sorted(t_stack *stack);
 int		get_position(t_stack *stack, int number);
 
 // sorting_algorithms/function_sorted.c
-void	sort_small(t_stack **stack_a);
+void	sort_small(t_stack **stack_a, t_stack **stack_b);
 void	ft_sorted(t_stack **stack_a, t_stack **stack_b);
-void    ft_sorted_big(t_stack **stack_a, t_stack **stack_b);
+void	ft_sorted_big(t_stack **stack_a, t_stack **stack_b);
 
-// // sorting_algorithms/sort_big.c
-int 	calculate_ra_cost(int position);
-int 	calculate_rra_cost(int total_size, int position);
-int 	find_insertion_position(t_stack *stack, int number);
-void	move_all_but_three(t_stack **stack_a, t_stack **stack_b);
-void	insert_elements_back(t_stack **stack_a, t_stack **stack_b);
+// sorting_algorithms/radix_sort.c
+int		get_max_bits(t_stack *stack);
+int		compare(const void *a, const void *b);
+void	collect(t_stack **stack_a, t_stack **stack_b);
+void	ft_stack_add_sorted(t_stack **sorted_list, t_stack *new_node);
+
+// sorting_algorithms/radix_sort.c
+void	map_numbers(t_stack **stack);
+void	radix_sort(t_stack **stack_a, t_stack **stack_b);
+void	distribute(t_stack **stack_a, t_stack **stack_b, int bit);
 
 #endif

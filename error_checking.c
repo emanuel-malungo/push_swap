@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   error_checking.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emalungo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:11:09 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/08 07:11:11 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:59:18 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "./push_swap.h"
 
 int	is_valid_number(const char *str)
 {

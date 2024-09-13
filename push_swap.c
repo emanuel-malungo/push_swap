@@ -3,31 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emalungo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:14:43 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/08 07:14:45 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:18:00 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
-
-void	print_stack(t_stack *stack)
-{
-	t_stack	*current;
-
-	current = stack;
-	if (current == NULL)
-	{
-		printf("A pilha está vazia.\n");
-		return ;
-	}
-	while (current != NULL)
-	{
-		printf("%d\n", current->number);
-		current = current->next;
-	}
-}
+#include "./push_swap.h"
 
 int	main(int argc, char **argv)
 {
@@ -50,7 +33,6 @@ int	main(int argc, char **argv)
 	if (!stack_is_sorted(stack_a))
 	{
 		ft_sorted(&stack_a, &stack_b);
-		print_stack(stack_a);
 	}
 	ft_free_stack(&stack_a);
 	return (0);

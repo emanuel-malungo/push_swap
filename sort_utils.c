@@ -6,12 +6,13 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:12:19 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/11 15:25:47 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:19:06 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Returns the number of elements in the stack
 int	get_stack_size(t_stack *stack)
 {
 	int	size;
@@ -25,6 +26,7 @@ int	get_stack_size(t_stack *stack)
 	return (size);
 }
 
+// Finds the largest number in the stack
 int	find_largest(t_stack *stack)
 {
 	int	largest;
@@ -41,6 +43,7 @@ int	find_largest(t_stack *stack)
 	return (largest);
 }
 
+// Finds the smallest number in the stack
 int	find_smallest(t_stack	*stack)
 {
 	int	smallest;
@@ -57,6 +60,7 @@ int	find_smallest(t_stack	*stack)
 	return (smallest);
 }
 
+// Checks if the stack is sorted in ascending order
 int	stack_is_sorted(t_stack *stack)
 {
 	if (stack == NULL || stack->next == NULL)
@@ -70,6 +74,7 @@ int	stack_is_sorted(t_stack *stack)
 	return (1);
 }
 
+// Returns the position of a number in the stack
 int	get_position(t_stack *stack, int number)
 {
 	int	position;

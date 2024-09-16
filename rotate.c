@@ -6,12 +6,13 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:13:54 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/12 14:00:13 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:15:38 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Rotates stack_a (top element moves to the bottom)
 void	ft_ra(t_stack **stack_a, int j)
 {
 	t_stack	*temp;
@@ -30,6 +31,7 @@ void	ft_ra(t_stack **stack_a, int j)
 		ft_putstr_fd("ra\n", 1);
 }
 
+// Rotates stack_b (top element moves to the bottom)
 void	ft_rb(t_stack **stack_b, int j)
 {
 	t_stack	*temp;
@@ -48,6 +50,7 @@ void	ft_rb(t_stack **stack_b, int j)
 		ft_putstr_fd("rb\n", 1);
 }
 
+// Rotates both stack_a and stack_b
 void	ft_rr(t_stack **stack_a, t_stack **stack_b, int j)
 {
 	ft_ra(stack_a, 0);

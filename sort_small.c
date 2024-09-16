@@ -6,12 +6,13 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:11:43 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/12 13:59:37 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:17:05 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Sorts a stack with two elements
 void	sort_two_elements(t_stack **stack_a)
 {
 	int	a;
@@ -25,6 +26,7 @@ void	sort_two_elements(t_stack **stack_a)
 		ft_sa(stack_a, 0);
 }
 
+// Sorts a stack with three elements
 void	sort_three_elemets(t_stack **stack_a)
 {
 	int	first;
@@ -54,6 +56,7 @@ void	sort_three_elemets(t_stack **stack_a)
 		ft_rra(stack_a, 0);
 }
 
+// Sorts four elements by moving the smallest to stack_b
 void	sort_four_elements(t_stack **stack_a, t_stack **stack_b)
 {
 	int	smallest;
@@ -66,6 +69,7 @@ void	sort_four_elements(t_stack **stack_a, t_stack **stack_b)
 	ft_pa(stack_a, stack_b, 0);
 }
 
+// Moves the smallest 'count' elements from stack_a to stack_b
 static void	move_smallest_to_b(t_stack **stack_a, t_stack **stack_b, int count)
 {
 	int	smallest;
@@ -95,6 +99,7 @@ static void	move_smallest_to_b(t_stack **stack_a, t_stack **stack_b, int count)
 	}
 }
 
+// Sorts five elements by moving the smallest two to stack_b
 void	sort_five_elements(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a == NULL || stack_b == NULL || *stack_a == NULL)

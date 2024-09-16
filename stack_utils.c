@@ -6,12 +6,13 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:14:02 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/12 13:20:55 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:15:49 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Creates a new stack node with the given number
 t_stack	*ft_stack_new(int number)
 {
 	t_stack	*new_node;
@@ -24,6 +25,7 @@ t_stack	*ft_stack_new(int number)
 	return (new_node);
 }
 
+// Adds a new node to the end of the stack
 void	ft_stack_add_back(t_stack **stack, t_stack *new_node)
 {
 	t_stack	*last_node;
@@ -39,6 +41,7 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new_node)
 	last_node->next = new_node;
 }
 
+// Converts numbers to stack nodes and adds them to stack_a
 static int	add_numbers_to_stack(t_stack **stack_a, char **numbers)
 {
 	int		i;
@@ -59,6 +62,7 @@ static int	add_numbers_to_stack(t_stack **stack_a, char **numbers)
 	return (1);
 }
 
+// Initializes stack_a from command-line arguments
 t_stack	*init_stack(int argc, char **argv)
 {
 	t_stack	*stack_a;

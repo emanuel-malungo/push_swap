@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:07:51 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/12 13:19:54 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:18:42 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int		validate_arguments(int argc, char **argv);
 // utilities/utils.c
 void	ft_free_split(char **split);
 void	ft_free_stack(t_stack **stack);
-void	print_stack(t_stack *stack);
 void	free_sorted_list(t_stack **sorted_list);
 
 // stack_operations/stack_utils.c

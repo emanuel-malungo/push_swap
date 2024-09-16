@@ -6,12 +6,13 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:14:09 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/12 13:21:23 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:17:14 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Swaps the first two elements of stack_a
 void	ft_sa(t_stack **stack_a, int j)
 {
 	t_stack	*first;
@@ -28,6 +29,7 @@ void	ft_sa(t_stack **stack_a, int j)
 		ft_putstr_fd("sa\n", 1);
 }
 
+// Swaps the first two elements of stack_b
 void	ft_sb(t_stack **stack_b, int j)
 {
 	t_stack	*first;
@@ -44,6 +46,7 @@ void	ft_sb(t_stack **stack_b, int j)
 		ft_putstr_fd("sb", 1);
 }
 
+// Swaps the first two elements of both stack_a and stack_b
 void	ft_ss(t_stack **stack_a, t_stack **stack_b, int j)
 {
 	ft_sa(stack_a, 0);

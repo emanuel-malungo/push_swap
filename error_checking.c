@@ -6,12 +6,13 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:11:09 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/12 13:59:18 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:15:00 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Check if the string represents a valid number
 int	is_valid_number(const char *str)
 {
 	if (*str == '-' || *str == '+')
@@ -27,6 +28,7 @@ int	is_valid_number(const char *str)
 	return (1);
 }
 
+// Fills the number array by dividing the command line arguments
 static int	ft_fill_numbers(char **numbers, char **argv, int argc)
 {
 	char	**temp;
@@ -56,6 +58,7 @@ static int	ft_fill_numbers(char **numbers, char **argv, int argc)
 	return (0);
 }
 
+// Parses command line arguments in a list of numbers
 char	**ft_parse_arguments(int argc, char **argv)
 {
 	char	**numbers;
@@ -70,6 +73,7 @@ char	**ft_parse_arguments(int argc, char **argv)
 	return (numbers);
 }
 
+// Check if the number is within the limits of an int
 int	is_within_int_limits(const char *str)
 {
 	long long int	result;
@@ -97,6 +101,7 @@ int	is_within_int_limits(const char *str)
 	return (1);
 }
 
+// Check for duplicate numbers in the stack
 int	check_stack_duplicates(t_stack *stack)
 {
 	t_stack	*current;

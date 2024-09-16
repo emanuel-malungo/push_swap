@@ -6,12 +6,13 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:13:48 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/12 13:58:37 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:18:55 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Rotates stack_a in reverse (bottom element becomes the top)
 void	ft_rra(t_stack **stack_a, int j)
 {
 	t_stack	*last;
@@ -30,6 +31,7 @@ void	ft_rra(t_stack **stack_a, int j)
 		ft_putstr_fd("rra\n", 1);
 }
 
+// Rotates stack_b in reverse (bottom element becomes the top)
 void	ft_rrb(t_stack **stack_b, int j)
 {
 	t_stack	*second_last;
@@ -50,6 +52,7 @@ void	ft_rrb(t_stack **stack_b, int j)
 		ft_putstr_fd("rrb\n", 1);
 }
 
+// Rotates both stack_a and stack_b in reverse
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b, int j)
 {
 	ft_rra(stack_a, 0);

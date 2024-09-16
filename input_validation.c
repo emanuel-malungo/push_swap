@@ -6,18 +6,20 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:10:54 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/11 15:24:58 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:15:13 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Displays an error message and exits the program
 void	ft_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }
 
+// Validates command-line arguments for valid numbers and limits
 int	validate_arguments(int argc, char **argv)
 {
 	int		i;

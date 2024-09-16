@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   frees_memory.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:12:48 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/12 13:18:22 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:16:25 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Frees memory allocated for an array of strings
 void	ft_free_split(char **split)
 {
 	int	i;
@@ -25,6 +26,7 @@ void	ft_free_split(char **split)
 	free(split);
 }
 
+// Frees memory for a stack
 void	ft_free_stack(t_stack **stack)
 {
 	t_stack	*temp;
@@ -37,24 +39,7 @@ void	ft_free_stack(t_stack **stack)
 	}
 }
 
-void	print_stack(t_stack *stack)
-{
-	t_stack	*current;
-
-	current = stack;
-	if (current == NULL)
-	{
-		printf("A pilha está vazia.\n");
-		return ;
-	}
-	while (current != NULL)
-	{
-		printf("%d\n", current->number);
-		current = current->next;
-	}
-}
-
-// Função auxiliar para liberar a memória da lista ordenada
+// Frees memory for a sorted list
 void	free_sorted_list(t_stack **sorted_list)
 {
 	t_stack	*temp;

@@ -3,28 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   radix_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emalungo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 13:50:59 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/13 12:52:23 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:16:57 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Compare two integers for ordering
 int	compare(const void *a, const void *b)
 {
 	return ((*(int *)a) - (*(int *)b));
 }
 
-// Coleta os números de volta à pilha A
+// Moves all elements from stack_b back to stack
 void	collect(t_stack **stack_a, t_stack **stack_b)
 {
 	while (*stack_b)
 		ft_pa(stack_a, stack_b, 0);
 }
 
-// Obtém o número máximo de bits necessário
+// Gets the maximum number of bits needed
 int	get_max_bits(t_stack *stack)
 {
 	int	max_num;
@@ -40,7 +41,7 @@ int	get_max_bits(t_stack *stack)
 	return (bits);
 }
 
-// Adiciona um nó na lista ordenada
+// Inserts a node in an ordered way into a chained list of stacks
 void	ft_stack_add_sorted(t_stack **sorted_list, t_stack *new_node)
 {
 	t_stack	*current;

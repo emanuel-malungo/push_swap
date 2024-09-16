@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emalungo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 13:22:16 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/12 13:57:42 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 08:15:29 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Função auxiliar para criar a lista auxiliar ordenada
+// Helper function to create the ordered helper list
 void	create_sorted_list(t_stack *stack, t_stack **sorted_list)
 {
 	t_stack	*temp;
@@ -29,7 +29,7 @@ void	create_sorted_list(t_stack *stack, t_stack **sorted_list)
 	}
 }
 
-// Função auxiliar para atualizar a pilha original com os índices
+// Auxiliary function to update the original stack with indexes
 void	update_stack_with_indices(t_stack *stack, t_stack *sorted_list)
 {
 	t_stack	*temp;
@@ -53,7 +53,7 @@ void	update_stack_with_indices(t_stack *stack, t_stack *sorted_list)
 	}
 }
 
-// Função para ordenar e mapear os números da pilha
+// Function to sort and map the stack numbers
 void	map_numbers(t_stack **stack)
 {
 	t_stack	*sorted_list;
@@ -66,7 +66,7 @@ void	map_numbers(t_stack **stack)
 	free_sorted_list(&sorted_list);
 }
 
-// Distribui os números com base no bit atual
+// Distributes the numbers based on the current bit
 void	distribute(t_stack **stack_a, t_stack **stack_b, int bit)
 {
 	int	bit_mask;
@@ -86,7 +86,7 @@ void	distribute(t_stack **stack_a, t_stack **stack_b, int bit)
 	}
 }
 
-// Função principal para ordenar usando radix sort
+// Main function for sorting using radix sort
 void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	max_bits;

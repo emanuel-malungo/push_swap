@@ -1,17 +1,13 @@
-# Nome do executável
 NAME = push_swap
 
-# Compilador e flags
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -I$(LIBFTDIR)
 
-# Diretórios
 SRCDIR = .
 LIBFTDIR = libft
 
-# Arquivos fonte e objetos
 SRCS = $(SRCDIR)/push_swap.c \
-       $(SRCDIR)/utils.c \
+       $(SRCDIR)/frees_memory.c \
        $(SRCDIR)/error_checking.c \
        $(SRCDIR)/input_validation.c \
        $(SRCDIR)/push.c \
@@ -27,13 +23,12 @@ SRCS = $(SRCDIR)/push_swap.c \
 
 OBJS = $(SRCS:.c=.o)
 
-# Regras
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(MAKE) -C $(LIBFTDIR)
 	@$(CC) $(CFLAGS) -o $@ $(OBJS) -L$(LIBFTDIR) -lft
-	@echo "Compilação concluída!"
+	@echo "Compilation completed!"
 
 $(SRCDIR)/%.o: $(SRCDIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -42,12 +37,12 @@ $(SRCDIR)/%.o: $(SRCDIR)/%.c
 clean:
 	@rm -f $(OBJS)
 	@$(MAKE) clean -C $(LIBFTDIR)
-	@echo "Arquivos objeto removidos!"
+	@echo "Object files removed!"
 
 fclean: clean
 	@rm -f $(NAME)
 	@$(MAKE) fclean -C $(LIBFTDIR)
-	@echo "Executável removido!"
+	@echo "Executable removed!"
 
 re: fclean all
 

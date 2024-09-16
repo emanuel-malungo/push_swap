@@ -1,25 +1,20 @@
-NAME = push_swap
-
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I$(LIBFTDIR)
-
 SRCDIR = .
 LIBFTDIR = libft
+NAME = push_swap
+CFLAGS = -Wall -Wextra -Werror -I$(LIBFTDIR)
 
 SRCS = $(SRCDIR)/push_swap.c \
        $(SRCDIR)/frees_memory.c \
        $(SRCDIR)/error_checking.c \
        $(SRCDIR)/input_validation.c \
-       $(SRCDIR)/push.c \
-       $(SRCDIR)/reverse_rotate.c \
        $(SRCDIR)/radix_sort.c \
        $(SRCDIR)/radix_utils.c \
        $(SRCDIR)/sort_utils.c \
-       $(SRCDIR)/swap.c \
        $(SRCDIR)/function_sorted.c \
        $(SRCDIR)/sort_small.c \
        $(SRCDIR)/stack_utils.c \
-       $(SRCDIR)/rotate.c \
+       $(SRCDIR)/stack_operetion.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -33,7 +28,7 @@ $(NAME): $(OBJS)
 $(SRCDIR)/%.o: $(SRCDIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "Compilado $<"
-
+       
 clean:
 	@rm -f $(OBJS)
 	@$(MAKE) clean -C $(LIBFTDIR)

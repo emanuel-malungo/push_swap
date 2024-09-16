@@ -6,17 +6,11 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 13:50:59 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/16 08:16:57 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/16 12:07:08 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
-
-// Compare two integers for ordering
-int	compare(const void *a, const void *b)
-{
-	return ((*(int *)a) - (*(int *)b));
-}
 
 // Moves all elements from stack_b back to stack
 void	collect(t_stack **stack_a, t_stack **stack_b)

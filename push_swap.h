@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:07:51 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/16 12:16:26 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/19 08:44:08 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_stack	*ft_stack_new(int number);
 t_stack	*init_stack(int argc, char **argv);
 void	ft_stack_add_back(t_stack **stack, t_stack *new_node);
 
-// stack_operetion.c
+// push.c
 void	ft_sa(t_stack **stack_a, int j);
 void	ft_ra(t_stack **stack_a, int j);
 void	ft_rra(t_stack **stack_a, int j);
@@ -58,7 +58,7 @@ void	sort_three_elemets(t_stack **stack_a);
 void	sort_four_elements(t_stack **stack_a, t_stack **stack_b);
 void	sort_five_elements(t_stack **stack_a, t_stack **stack_b);
 
-// sort_utils.c
+// sorting_algorithms/sort_utils.c
 int		find_largest(t_stack *stack);
 int		get_stack_size(t_stack *stack);
 int		find_smallest(t_stack	*stack);

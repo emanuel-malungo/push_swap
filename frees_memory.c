@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:12:48 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/16 08:16:25 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/20 08:06:03 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_free_split(char **split)
 	int	i;
 
 	i = 0;
+	if (split == NULL)
+		return ;
 	while (split[i])
 	{
 		free(split[i]);

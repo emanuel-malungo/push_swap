@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:11:09 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/16 08:15:00 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/20 08:37:51 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,16 @@ static int	ft_fill_numbers(char **numbers, char **argv, int argc)
 // Parses command line arguments in a list of numbers
 char	**ft_parse_arguments(int argc, char **argv)
 {
+	int		i;
 	char	**numbers;
 
+	i = 0;
+	while (argv[i])
+	{
+		if (argv[i][0] == '\0')
+			return (NULL);
+		i++;
+	}
 	if (argc <= 1)
 		return (NULL);
 	numbers = (char **)malloc((argc * 10) * sizeof(char *));
@@ -90,9 +98,9 @@ int	is_within_int_limits(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		result = result * 10 + (*str - '0');
-		if (sig == 1 && result > INT_MAX)
+		if (sig >= 1 && result > INT_MAX)
 			return (0);
-		if (sig == -1 && result < INT_MIN)
+		if (sig == -1 && (-result) < INT_MIN)
 			return (0);
 		str++;
 	}

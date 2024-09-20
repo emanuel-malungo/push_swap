@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 07:10:54 by emalungo          #+#    #+#             */
-/*   Updated: 2024/09/16 08:15:13 by emalungo         ###   ########.fr       */
+/*   Updated: 2024/09/20 08:10:32 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ int	validate_arguments(int argc, char **argv)
 	while (numbers[i])
 	{
 		if (!is_valid_number(numbers[i]) || !is_within_int_limits(numbers[i]))
+		{	
+			ft_free_split(numbers);
 			return (0);
+		}
 		i++;
 	}
-	if (argc > 1)
-		ft_free_split(numbers);
+	ft_free_split(numbers);
 	return (1);
 }
